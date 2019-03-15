@@ -24,18 +24,15 @@ class MainActivity : BaseActivityWithLoading(), IMainActivityView {
     override fun onStart() {
         super.onStart()
         permissionHandler.checkLocationPermission(this, {
-            ifInternetAvailableDo {
-                presenter.loadWeather()
-            }
-        }, {
-            showMessage(R.string.allow_location)
-        }, Manifest.permission.ACCESS_FINE_LOCATION)
+            ifInternetAvailableDo { presenter.loadWeather() }
+        },
+            {
+                showMessage(R.string.allow_location)
+            }, Manifest.permission.ACCESS_FINE_LOCATION
+        )
     }
 
-    override fun showWeather(
-            weatherModel: WeatherModel,
-            locationName: String
-    ) {
+    override fun showWeather(weatherModel: WeatherModel, locationName: String) {
         weatherModel.apply {
             tv_temperature.text = getString(R.string.temperature, currently?.temperature.toString())
             tv_summary.text = getString(R.string.summary, currently?.summary)
