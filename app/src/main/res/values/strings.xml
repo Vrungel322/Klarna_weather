@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Klarna_Coding_test</string>
+    <string name="empty" />
+    <string name="no_internet">No Internet connection</string>
+    <string name="allow_location">You need to allow Location</string>
+    <string name="title_location_permission">Allow location</string>
+    <string name="text_location_permission">For fetch weather data we need your location</string>
+    <string name="ok">OK</string>
+    <string name="temperature">Temperature : %1$s</string>
+    <string name="summary">Summary : %1$s</string>
+</resources>
