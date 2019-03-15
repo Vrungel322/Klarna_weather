@@ -12,7 +12,8 @@ import kotlinx.android.synthetic.main.widget_progress_view.view.*
  * Use instead of deprecated ProgressDialog, it already used in BaseActivityWithLoading
  */
 class CustomProgressView @JvmOverloads constructor(
-        context: Context, val attrs: AttributeSet? = null, defStyleAttr: Int = 0) : FrameLayout(context, attrs, defStyleAttr) {
+    context: Context, val attrs: AttributeSet? = null, defStyleAttr: Int = 0
+) : FrameLayout(context, attrs, defStyleAttr) {
 
     init {
         LayoutInflater.from(context).inflate(R.layout.widget_progress_view, this)

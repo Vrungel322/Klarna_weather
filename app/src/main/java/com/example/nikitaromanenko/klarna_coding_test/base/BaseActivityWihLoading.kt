@@ -3,11 +3,11 @@ package com.example.nikitaromanenko.klarna_coding_test.base
 import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import com.example.nikitaromanenko.klarna_coding_test.view.CustomProgressView
 import com.example.nikitaromanenko.klarna_coding_test.R
 import com.example.nikitaromanenko.klarna_coding_test.extenstions.addViewToRoot
-import com.example.nikitaromanenko.klarna_coding_test.extenstions.removeViewFromRoot
 import com.example.nikitaromanenko.klarna_coding_test.extenstions.isNetworkAvailable
+import com.example.nikitaromanenko.klarna_coding_test.extenstions.removeViewFromRoot
+import com.example.nikitaromanenko.klarna_coding_test.view.CustomProgressView
 
 
 abstract class BaseActivityWithLoading : AppCompatActivity(),

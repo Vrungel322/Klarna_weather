@@ -1,10 +1,10 @@
 package com.example.nikitaromanenko.klarna_coding_test.screen_main
 
-import android.Manifest
 import android.os.Bundle
 import com.example.nikitaromanenko.klarna_coding_test.App
 import com.example.nikitaromanenko.klarna_coding_test.R
 import com.example.nikitaromanenko.klarna_coding_test.base.BaseActivityWithLoading
+import com.example.nikitaromanenko.klarna_coding_test.locationPermission
 import com.example.nikitaromanenko.klarna_coding_test.model.WeatherModel
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -23,15 +23,15 @@ class MainActivity : BaseActivityWithLoading(), IMainActivityView {
 
     override fun onStart() {
         super.onStart()
-        permissionHandler.checkLocationPermission(this, {
-            ifInternetAvailableDo { presenter.loadWeather() }
-        },
-            {
-                showMessage(R.string.allow_location)
-            }, Manifest.permission.ACCESS_FINE_LOCATION
+        permissionHandler.checkLocationPermission(
+            this, { ifInternetAvailableDo { presenter.loadWeather() } },
+            { showMessage(R.string.allow_location) }, locationPermission
         )
     }
 
+    /**
+     * Fill in UI components
+     */
     override fun showWeather(weatherModel: WeatherModel, locationName: String) {
         weatherModel.apply {
             tv_temperature.text = getString(R.string.temperature, currently?.temperature.toString())

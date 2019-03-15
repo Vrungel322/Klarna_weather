@@ -14,5 +14,6 @@ abstract class BasePresenter<T : BaseView> {
 
     open protected fun processError(error: Throwable) {
         error.printStackTrace()
+        view?.showMessage(error.localizedMessage)
     }
 }

@@ -16,8 +16,10 @@ class ApiHelper(private val gson: Gson) {
         private val BASE_URL = "https://api.darksky.net"
     }
 
-    fun loadWeather(latitude: Double?, longitude: Double?,
-                    successCallback: ((WeatherModel) -> Unit)? = null, failCallback: ((Exception) -> Unit)? = null) {
+    fun loadWeather(
+        latitude: Double?, longitude: Double?,
+        successCallback: ((WeatherModel) -> Unit)? = null, failCallback: ((Exception) -> Unit)? = null
+    ) {
         val link = if (latitude == null || longitude == null) {
             "$BASE_URL/forecast/2bb07c3bece89caf533ac9a5d23d8417/59.337239,18.062381"
         } else {
